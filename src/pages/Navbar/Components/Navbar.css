@@ -1,0 +1,39 @@
+.nav-link.active
+{
+    border-bottom: 3px solid rgb(145, 95, 143);
+}
+
+ .toggle
+{  font-size: 2rem;
+    font-weight: bold;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: oblique;
+    color: black;
+}
+
+
+.sofia-regular {
+    font-family: "Sofia", cursive;
+    font-weight: 400;
+    font-style: normal;
+    color: black;
+  }
+  
+
+.madimi-one-regular {
+    font-family: "Madimi One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+  }
+.logoIm
+{
+  width: 80px;
+}
