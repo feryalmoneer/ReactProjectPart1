@@ -1,16 +1,18 @@
-*
-{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+img,
+svg {
+  vertical-align: middle;
+  width: 120px;
 }
+
 .rubik-mono one-regular {
   font-family: "Rubik Mono One", monospace;
-  font-weight: 400;
+  font-weight: 800;
   font-style: normal;
+  color: blueviolet;
 }
 .sofia-regular {
   font-family: "Sofia", cursive;
-  font-weight: 400;
+  font-size: 80px;
   font-style: normal;
+  color: rgb(148, 101, 135);
 }

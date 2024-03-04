@@ -1,33 +1,28 @@
-.Hero
-{
-    margin: 5rem 0;
+.Hero {
+  margin: 5rem 0;
 }
-.text , .text-hero-bold 
-{
-margin: 24px 0;
+.text,
+.text-hero-bold {
+  margin: 24px 0;
 }
 .lobster-regular {
-    font-family: "Lobster", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 39px;
-  }
-  
+  font-family: "Lobster", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 39px;
+}
 
-.text-hero-bold 
-{
-    color: black;
-    font-size: 30px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
-  
+.text-hero-bold {
+  color: black;
+  font-size: 30px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
-.Hero img{
-    width: 100%;
+.Hero img {
+  width: 100%;
 }
-@media (min-width:1399.99px) {
-    .container
-    {
-        width: 84%;
-    }
-    
+@media (min-width: 1399.99px) {
+  .container {
+    width: 84%;
+  }
 }
