@@ -1,72 +1,69 @@
-.dis
-{
-    position: absolute;
-    top: 50%;
-    left:70%;
-    transform: translateY(-50%);
+.shrikhand-regular {
+    font-weight: 1000;
+    font-size: x-large;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-.dis h1
-{
-  color: orangered;
-  font-weight: 700;
-  font-size: 16px;
-  text-transform: uppercase;  
-}
-.dis p
-{
-   max-width: 100%;
-   width: 500;
-   line-height: 1.5; 
-}
-.img
-{
-    width: 340px;
+    font-style: normal;
+    color: rgb(171, 46, 50);
+  }
+  
+  svg{
+   width:40px;
+  }
+  header
+  {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+  }
+  header .icon_cart{
+    position: relative;
+  }
+  header .icon_cart span{
+    width: 30px;
+    height:30px;
+    background-color: rgb(220, 101, 101);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
     position: absolute;
-    top:50px;
-    right:60px ;
-    transform: translateY(-30%);
-    padding: 5px;
-    overflow: hidden;
-}
-.img_container
-{
-display: flex;
-gap: 20px;
-transform: all 4s linear;
-animation: imganime 11s linear infinite;
+    top:50%;
+    right: -20px;
+  }
+  .item_product .item img{
+filter:drop-shadow(0 10px 20px #0009) ;
 
-}
-.img_container img
-{
-    width: 200px;
-    height: 250px;
-    object-fit: cover;
-    object-position: center;
-    border: 2px solid skyblue;
-    border-radius: 30px;
-}
-@keyframes imganime {
-    0%
-    {
-        transform: translateX(0);
-    }
-    20%
-    {
-        transform: translateX(-220); 
-    }
-    50%
-    {
-        transform: translateX(-440); 
-    }
-    50%
-    {
-        transform: translateX(-440); 
-    }
-    100%
-    {
-        transform: translateX(0); 
-    }
+  }
+  .item_product
+  {
+    display: flex;
+    grid-template-columns: repeat(4,1fr);
+    gap:20px
+  }
+  .item_product .item 
+  {
+    background-color: #eeeee6;
+    padding: 20px;
+    border-radius: 20px;
+  }
+  .item_product .item  h2{
+    font-weight: 500;
+    font-size: large;
 
-}
+  }
+  .item_product .item  .price{
+    letter-spacing: 7px;
+    font-size: medium;
 
+  }
+  .item_product .item  button{
+    background-color: rgb(20, 20, 20);
+    color: #c9c98a;
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+
+  }
