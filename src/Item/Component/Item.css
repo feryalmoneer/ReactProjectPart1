@@ -1,0 +1,72 @@
+.dis
+{
+    position: absolute;
+    top: 50%;
+    left:70%;
+    transform: translateY(-50%);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.dis h1
+{
+  color: orangered;
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;  
+}
+.dis p
+{
+   max-width: 100%;
+   width: 500;
+   line-height: 1.5; 
+}
+.img
+{
+    width: 340px;
+    position: absolute;
+    top:50px;
+    right:60px ;
+    transform: translateY(-30%);
+    padding: 5px;
+    overflow: hidden;
+}
+.img_container
+{
+display: flex;
+gap: 20px;
+transform: all 4s linear;
+animation: imganime 11s linear infinite;
+
+}
+.img_container img
+{
+    width: 200px;
+    height: 250px;
+    object-fit: cover;
+    object-position: center;
+    border: 2px solid skyblue;
+    border-radius: 30px;
+}
+@keyframes imganime {
+    0%
+    {
+        transform: translateX(0);
+    }
+    20%
+    {
+        transform: translateX(-220); 
+    }
+    50%
+    {
+        transform: translateX(-440); 
+    }
+    50%
+    {
+        transform: translateX(-440); 
+    }
+    100%
+    {
+        transform: translateX(0); 
+    }
+
+}
+

@@ -1,0 +1,23 @@
+.lobster-regular {
+    font-family: "Lobster", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    display: flex;
+      margin-left: 23px;
+  }
+  .teext-hero-bold {
+    color: rgb(120, 73, 73);
+    font-size: 300;
+    font-weight: bold;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+      margin: 24px 30px;
+  
+  }
+  span
+  {
+    font-weight: bold;
+    font-size: 500;
+  }
+
+

@@ -1,6 +1,12 @@
 .Hero {
   margin: 5rem 0;
 }
+.col-8
+{
+  margin: 30px 90px 12px 10px;
+  align-items: center;
+  justify-content: center;
+}
 .text,
 .text-hero-bold {
   margin: 24px 0;
@@ -10,16 +16,20 @@
   font-weight: 400;
   font-style: normal;
   font-size: 39px;
+  display: flex;
+    margin-left: 23px;
 }
 
-.text-hero-bold {
-  color: black;
-  font-size: 30px;
+.teext-hero-bold {
+  color: rgb(120, 73, 73);
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
+    margin: 24px 30px;
+
 }
 .Hero img {
   width: 100%;
+  border-radius: 30px;
 }
 @media (min-width: 1399.99px) {
   .container {
