@@ -4,7 +4,6 @@ import { useState } from "react";
 import { Zoom, toast } from "react-toastify";
 //import{object , string} from 'yap';
 import { useNavigate } from "react-router-dom";
-
 export default function Signup() {
   const Navigate = useNavigate();
   const [loader, setLoader] = useState(false);
@@ -52,8 +51,7 @@ export default function Signup() {
     formData.append("image", user.image);
     /* Display the valuesfor (const value of formData.values()) {console.log(value);}*/
     try {
-      const { data } = await axios.post(
-        `${import.meta.env.VITE_API}/auth/signup`,
+      const { data } = await axios.post( `https://ecommerce-node4-five.vercel.app/auth/signup`,
         formData
       );
       setUser({
@@ -105,8 +103,8 @@ export default function Signup() {
         </div>
         <div className="login-content">
           <form onSubmit={handelSubmit}>
-            <h2 className="title pacifico-regular">SignUp</h2>
-            <div className="input-div">
+            <h2 className="pt-serif-regular-italic ">SignUp</h2>
+     <div className="input-div">
               <div className="div">
                 <h5>Username</h5>
                 <input
@@ -154,7 +152,9 @@ export default function Signup() {
             </button>
           </form>
         </div>
+    
       </div>
+    
     </>
   );
 }

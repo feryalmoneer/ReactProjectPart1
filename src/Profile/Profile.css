@@ -1,0 +1,76 @@
+.Sidebar
+{
+    width:300px;
+    height: 100vh;
+    background-color: #f1f2f3;
+margin: 72px 20px;
+border-radius: 20%;
+padding: 20px;
+}
+.SidebarList
+{
+    height: 100%;
+    width: 100%;
+}
+
+
+.iconsp
+{
+    width: 24px;
+    height: 24px;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+}
+
+ .text
+{
+    display: flex;
+   justify-content:start;
+   column-gap: 12px;
+    font-size: medium;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 10px 30px;
+    color: black;
+    text-decoration: none;
+    text-transform: capitalize;
+    
+
+ }
+ .text{
+    text-align: end;
+    gap: 12px;
+padding-right:190px;
+ }
+ ol li:hover a{
+    background-color: rgb(148, 22, 66);
+    color: rgb(195, 178, 184);
+    letter-spacing: 3px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+
+ }
+.cs{
+    padding: 60px;
+}
+.row1
+{
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    gap: 10%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    margin-right: calc(-0.5 * var(--bs-gutter-x));
+    margin-left: calc(-0.5 * var(--bs-gutter-x));
+}
+@media (max-width: 430px) { 
+    .Sidebar
+    {
+        height: 50vh;
+    }
+    .row1
+    {
+        gap: 40%;
+    }
+ }

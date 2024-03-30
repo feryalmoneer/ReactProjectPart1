@@ -1,0 +1,31 @@
+
+    .mgCardA
+    {
+        width: 50%;
+        height: 50%;
+        border-radius: 30%;
+    }
+    .team .member h4 {
+    font-weight: 700;
+    margin-bottom: 5px;
+    font-size: 20px;
+    color: tomato;
+    }
+ .section-title h2 {
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    position: relative;
+    color: tomato;
+    }
+    
+    .underline{
+        width: 150px;
+        height: 1px;
+        background-color: black;
+        margin: auto;
+        margin-top: -30px;
+    }
+

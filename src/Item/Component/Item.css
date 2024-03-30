@@ -1,69 +1,12 @@
-.shrikhand-regular {
-    font-weight: 1000;
-    font-size: x-large;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-style: normal;
-    color: rgb(171, 46, 50);
-  }
-  
-  svg{
-   width:40px;
-  }
-  header
-  {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 30px;
-  }
-  header .icon_cart{
-    position: relative;
-  }
-  header .icon_cart span{
-    width: 30px;
-    height:30px;
-    background-color: rgb(220, 101, 101);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    position: absolute;
-    top:50%;
-    right: -20px;
-  }
-  .item_product .item img{
-filter:drop-shadow(0 10px 20px #0009) ;
 
-  }
-  .item_product
-  {
-    display: flex;
-    grid-template-columns: repeat(4,1fr);
-    gap:20px
-  }
-  .item_product .item 
-  {
-    background-color: #eeeee6;
-    padding: 20px;
-    border-radius: 20px;
-  }
-  .item_product .item  h2{
-    font-weight: 500;
-    font-size: large;
+span
+{
+  font-weight: bold;
+  font-size: 500;
+}
 
-  }
-  .item_product .item  .price{
-    letter-spacing: 7px;
-    font-size: medium;
+.ratio
+{
+aspect-ratio: 250/180;
 
-  }
-  .item_product .item  button{
-    background-color: rgb(20, 20, 20);
-    color: #c9c98a;
-    padding: 5px 10px;
-    border-radius: 20px;
-    margin-top: 10px;
-    border: none;
-    cursor: pointer;
-
-  }
+}

@@ -1,31 +1,27 @@
 import axios from "axios";
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom";
-import { Zoom, toast } from "react-toastify";
 import './Item.css'
+import Loder from "../../pages/Loader/Lodaer";
 export default function Item() {
 const[item ,setItem]= useState([]);
-  const{id} = useParams();
+const[loader , setLoader]=useState(true);
+ const{id} = useParams();
   const getItem = async()=>
   { try{
 
-    const { data } = await axios.get(`https://ecommerce-node4.vercel.app/products/category/${id}`);   
+    const { data } = await axios.get(`https://ecommerce-node4-five.vercel.app/products/category/${id}`);   
     setItem(data.products);
+  
+ 
+  } catch (error)
+  { 
+console.log(error);
+  }
     
-  }catch
+    finally
     {
-      console.log("r")
-      toast.error("There are no products", {
-        position: "bottom-right",
-        autoClose: 5000,
-        hideProgressBar: true,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: 1,
-        theme: "light",
-        transition: Zoom,
-      });
+      setLoader(false);
     }
 
   }
@@ -33,9 +29,48 @@ const[item ,setItem]= useState([]);
   useEffect(() => {
     getItem();
   }, []);
+
+  if(loader)
+  {
+   return<Loder/ >;
+  }
 return (
   <>
- <div className="container">
+  <br/> <br/> <br/> <br/><br/><br/>
+  <div className="container text-center">
+<div className=" row  row-lg-4 row-md-3 gap-3"  >
+ {
+  item.map( p=>
+    <div className="card" style={{width: '18rem'}} key={p._id}>
+      <img src={p.mainImage.secure_url} className="ratio" alt="p-Img" />
+      <div className="card-body">
+        <h5 className="card-title"> {p.name}</h5>
+      </div>
+    </div>
+    )}
+ 
+ </div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</>)
+}
+
+
+
+{/**
+<div className="container">
 <header>
   <div className=" shrikhand-regular ">Productds</div>
   <div className="icon_cart">
@@ -48,23 +83,19 @@ return (
 
   <div className="item_product">
   {item.map(it =>
-
 <div className="item" key={it._id}>
 <img src ={it.mainImage.secure_url} alt="item-img"/>
 <h2> {it.name} </h2>
 <div className="price">${it.price}</div>
 <button className="addCart">ADD To Cart</button>
-
 </div>
 
   )}
+ 
 
 </div>
-
-
 
 
  </div>
 
-</>)
-}
+*/}

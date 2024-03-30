@@ -1,32 +1,77 @@
-.nav-link.active {
-  border-bottom: 3px solid rgb(145, 95, 143);
-}
 
-.toggle {
-  font-size: 2rem;
-  font-weight: bold;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  font-style: oblique;
-  color: black;
-}
+.navbar{
+  background-color: rgb(207, 159, 92);
+  height: 68px;
+  margin: 10px;
+  border-radius: 20px;
+  padding: 0.5rem;
 
-.sofia-regular {
-  font-family: "Sofia", cursive;
-  font-weight: 400;
-  font-style: normal;
-  color: black;
-}
 
-.madimi-one-regular {
-  font-family: "Madimi One", sans-serif;
+}
+.lobster-regular {
+  font-family: "Lobster", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
 
-.material-symbols-outlined {
-  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+
+.navbar-brand 
+{
+font-weight: 500;
+ font-size: 24px;
+ font-family: monospace;
+
 }
-.logoIm {
-  width: 80px;
+.navbar-toggler{
+border:none;  
+ font-size: 1.25rem
 }
+.navbar-toggler :focus{
+box-shadow: none ;
+outline: none;
+  }
+
+.navbar-toggler :focus , .btn-close:focus{
+    box-shadow: none ;
+    outline: none;
+}
+ .nav-link :hover , .nav-link.active{
+color:#c7a6a6 ;
+      }
+
+      .nav-link:before{
+content: "";
+position: absolute;
+bottom: 0;
+left: 50%;
+transform: translateX(-50%);
+width: 100%;
+height: 2px;
+
+
+}
+.cart{
+  position: relative;
+}
+        .navbar svg{
+        height: 25px;
+        width: 25px;
+        cursor: pointer;
+
+      }
+      .qty
+      {
+        border-radius: 50%;
+        background-color: rgb(178, 157, 96);
+        color: rgb(17, 17, 17);
+        position: absolute;
+       width: 20px; height: 20px;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      top: -3px;
+      right: -1px;
+      font-size: 12px;
+      align-items: center;
+      text-align: center;
+      }

@@ -1,22 +1,125 @@
-.loader {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: block;
-  margin: 15px auto;
-  position: relative;
-  background: #fffafa;
-  box-sizing: border-box;
-  animation: shadowExpandX 2s linear infinite alternate;
+
+
+.lod {
+  font-size: 10px;
+  font-family: Roboto, sans-serif;
+  margin: 0;
+  display: grid;
+  height: 100vh;
+  place-items: center;
+  font-size:xx-large;
+
+
 }
 
-@keyframes shadowExpandX {
+.l {
+  color: black;
+  opacity: 0;
+  animation: pass 2s ease-in-out infinite;
+  animation-delay: 1ms;
+  letter-spacing: 0.5em;
+  font-weight: bold;
+  text-shadow: 2px 2px 3px #919191;
+}
+
+.o {
+  color: black;
+  opacity: 0;
+  animation: pass 2s ease-in-out infinite;
+  animation-delay: 1.2ms;
+  letter-spacing: 0.5em;
+  text-shadow: 2px 2px 3px #919191;
+}
+
+.alo {
+  color: black;
+  opacity: 0;
+  animation: pass 2s ease-in-out infinite;
+  animation-delay: 1.4ms;
+  letter-spacing: 0.5em;
+  text-shadow: 2px 2px 3px #919191;
+}
+
+.d {
+  color: black;
+  opacity: 0;
+  animation: pass 2s ease-in-out infinite;
+  animation-delay:1.6ms;
+  letter-spacing: 0.5em;
+  text-shadow: 2px 2px 3px #919191;
+}
+
+.i {
+  color: black;
+  opacity: 0;
+  animation: pass 2s ease-in-out infinite;
+  animation-delay: 4ms;
+  letter-spacing: 0.5em;
+  text-shadow: 2px 2px 3px #919191;
+}
+
+.n {
+  color: black;
+  opacity: 0;
+  animation: pass 2s ease-in-out infinite;
+  animation-delay: 1.8ms;
+  letter-spacing: 0.5em;
+  text-shadow: 2px 2px 3px #919191;
+}
+
+.g {
+  color: black;
+  opacity: 0;
+  animation: pass 2s ease-in-out infinite;
+  animation-delay: 2ms;
+  letter-spacing: 0.5em;
+  text-shadow: 2px 2px 3px #919191;
+}
+
+.d1 {
+  color: black;
+  opacity: 0;
+  animation: pass1 2s ease-in-out infinite;
+  animation-delay: 2.2ms;
+  letter-spacing: 0.5em;
+  text-shadow: 2px 2px 3px #919191;
+}
+
+.d2 {
+  color: black;
+  opacity: 0;
+  animation: pass1 2s ease-in-out infinite;
+  animation-delay: 2.4ms;
+  letter-spacing: 0.5em;
+  text-shadow: 2px 2px 3px #919191;
+}
+
+@keyframes pass {
   0% {
-    box-shadow: 0 0, 0 0;
-    color: rgba(216, 145, 173, 0.2);
+    opacity: 1;
   }
+
+  50% {
+    opacity: 0;
+  }
+
   100% {
-    box-shadow: -24px 0, 24px 0;
-    color: rgba(160, 53, 53, 0.8);
+    opacity: 1;
   }
 }
+
+@keyframes pass1 {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+

@@ -1,20 +1,17 @@
 import './Sign.css'
 import { useState } from "react";
-import { Zoom, toast } from 'react-toastify';
-//import Loder from '../../Loader/Lodaer';
+import {Bounce , toast} from 'react-toastify';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 export default function SignIn() {
- const Navigate =useNavigate();
-  const[loader , setLoader]=useState();
+  const Navigate = useNavigate();
+  const[loader , setLoader]=useState(false);
   const [user, setUser] = useState({
-    Username: "",
+    email: "",
     password: "",
   });
   const handelChange = (e) => {
     const { name, value } = e.target;
-   // console.log(name);
-   // console.log(value);
     setUser({ ...user, [name]: value });
   };
   const handelSubmit = async (e)=>{
@@ -22,61 +19,57 @@ export default function SignIn() {
     setLoader(true);
     try
     {
-   const {data} = await axios.post(`${import.meta.env.VITE_API}/auth/signin`); 
-      setUser(
-      {
-        Uusername:'' , password:'' ,
-
-      });
-      //console.log(data);
-      localStorage.setItem('userToken',data.token)
-      if(data.message=='success')
-      { toast.success('Acoount Created', {
-        position:"bottom-right",
-        autoClose:3000,
-        hideProgressBar: true,
-        closeOnClick:true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-        transition: Zoom,
-      })
-      Navigate('/')
+   const {data} = await axios.post(`https://ecommerce-node4-five.vercel.app/auth/signin`,user); 
+     // console.log(data);
+      setUser( {email:'' , password:''});
+      if(data.message ==='success')
+      { 
+        toast.success('Thank You!  Your data has been successfully submitted'
+        , {
+          position: "bottom-center",
+          autoClose: false,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: false,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+          });
+      localStorage.setItem('userToken',data.token);
+    
+      Navigate('/');
     }
 
-  } catch(error){   
-      toast.error(error.response.data.message, {
-        position: "bottom-right",
-        autoClose: 5000,
-        hideProgressBar: true,
-        closeOnClick:true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: 1,
-        theme: "light",
-        transition: Zoom,
-        })
+  } catch{   
+   console.log("error");
      }
     finally
     {
       setLoader(false);
     }
   };
+ 
   return (<> 
 <div className="containerc">
-  <div className="img"> <img src="form.svg"/> </div>
-
+<div className="img"> <img src="form.svg"/> </div>
 <div className="login-content">
     <form onSubmit={handelSubmit} >
-      <h2 className="title gruppo-regular">Welcome Back..</h2>
-      <div className="input-div ">
-     
-        <div className="div">
-          <h5>Username</h5>
-          <input type='text' name='Username' value={user.Username} onChange={handelChange}/>
-        </div>
-      </div>
+      <h2 className="pt-serif-regular-italic ">Welcome Back..</h2>
+      <div className="lines">
+  < hr/>
+  </div>
+      <div className="input-div">
+              <div className="div">
+                <h5>Email</h5>{" "}
+                <input
+                  type="email"
+                  name="email"
+                  value={user.email}
+                  onChange={handelChange}
+                />
+              </div>
+            </div>
       <div className="input-div pass ">
      
         <div className="div">
@@ -84,8 +77,13 @@ export default function SignIn() {
           <input type="password" name='password' value={user.password} onChange={handelChange}/>
         </div>
       </div>
-      <a href="#">Forgot Password?</a>
-      <button type="submit" className="bn" disabled={loader?'disabled':''} >{!loader ?'Login':'wait..'}</button>
+      <a className='a' href="/SendCode">forgetPassword?</a> 
+      <a className='a' href="/signup">If you Dont Have an Account</a>
+
+
+      <button type="submit" className="bn" disabled={loader?'disabled':''} >
+        {!loader ?'Login':'wait..'}</button>
+
     </form>
   </div> 
  
