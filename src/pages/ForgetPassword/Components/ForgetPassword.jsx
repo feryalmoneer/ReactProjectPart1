@@ -58,7 +58,9 @@ export default function ForgetPassword() {
       <label htmlFor="Boolean" className="form__label">Code</label>
     </div>
     <input type="submit" className="formbutton" defaultValue="submit"    />
+
   </form>
+
 </div>
 </div>
     </>

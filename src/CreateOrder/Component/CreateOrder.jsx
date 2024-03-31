@@ -55,18 +55,8 @@ export default function CreateOrder() {
   return (
     <>
     <div className="order  container ">
-    <div className="d-flex  oo">
-                          {
-                          cart.map(item =>
-                              <div className="cartItem " key={item._id}>
-                                  <div >
-                                      <img className='MainImage' src={item.details.mainImage.secure_url} />
-                                  </div>
-                              </div>
-                          )}
-                      </div>
-<div  className='bodyss'>
-<div className="l-formm">
+<div  className='body'>
+<div className="l-form">
   <form  className="form" onSubmit={handelSubmit}>
     <div className="form__div">
       <input type="text" className="form__input" placeholder=" " name=" couponName" value={orderData.couponName}  onChange={handelChange} />
@@ -83,6 +73,16 @@ export default function CreateOrder() {
     <input type="submit" className="formbutton"  value="Order"/>
   </form>
 </div>
+<div className="d-flex  ">
+                          {
+                          cart.map(item =>
+                              <div className="cartItem " key={item._id}>
+                                  <div >
+                                      <img className='MainImage' src={item.details.mainImage.secure_url} />
+                                  </div>
+                              </div>
+                          )}
+                      </div>
 </div>
    </div>
 

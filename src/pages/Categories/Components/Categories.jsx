@@ -46,7 +46,7 @@ export default function Categories() {
     <br/>   <br/>  <br/>  <br/>
     <Swiper className='mt-5 bgCat'
     modules={[Navigation, Pagination, Scrollbar, A11y]}
-    spaceBetween={20}
+    spaceBetween={50}
     slidesPerView={7}
     navigation
       onSlideChange={() => console.log('slide change')}

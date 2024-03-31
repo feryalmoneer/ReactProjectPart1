@@ -1,5 +1,5 @@
 import axios from "axios";
-import "./signup.module..css";
+import "./signup.module.css";
 import { useState } from "react";
 import { Zoom, toast } from "react-toastify";
 //import{object , string} from 'yap';

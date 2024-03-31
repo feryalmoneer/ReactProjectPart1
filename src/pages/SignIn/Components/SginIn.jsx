@@ -55,10 +55,11 @@ export default function SignIn() {
 <div className="img"> <img src="form.svg"/> </div>
 <div className="login-content">
     <form onSubmit={handelSubmit} >
-      <h2 className="pt-serif-regular-italic ">Welcome Back..</h2>
-      <div className="lines">
-  < hr/>
-  </div>
+      <h2 className="pt-serif-regular-italic  t">Welcome Back</h2>
+<br/><br/>
+<br/>
+<br/>
+
       <div className="input-div">
               <div className="div">
                 <h5>Email</h5>{" "}

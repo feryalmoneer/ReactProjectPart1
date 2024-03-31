@@ -1,11 +1,7 @@
-.oo{
-    margin: 50px;
-   column-gap: 6px;
-  border-radius: 70px;
-}
+
 .MainImage{
   
-  border-radius: 70px;
+  border-radius: 40px;
   box-shadow: 3px 10px 25px rgba(78, 144, 43, 0.2);
   margin: 120px;
 }

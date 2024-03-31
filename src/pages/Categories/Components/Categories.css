@@ -10,3 +10,29 @@
    
     margin-top: 20px;
 }
+
+@media (max-width: 450px) { 
+   .swiper-wrapper
+   {
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: stretch;
+flex-wrap: nowrap;
+
+
+   }
+ }
+ @media (max-width: 350px) { 
+    .swiper-wrapper
+    {
+ display: flex;
+ flex-direction: row;
+ justify-content: space-between;
+ align-items: stretch;
+ flex-wrap: nowrap;
+ row-gap: 40px;
+ column-gap: 50px;
+    }
+  }
+ 

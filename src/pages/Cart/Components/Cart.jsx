@@ -110,48 +110,38 @@ const clear = async ()=>{
   return (
   <> 
   <br/> <br/> <br/>   <br/> <br/> <br/>
-<div className="container text-center">
+<div className="container ">
 
-  <div className="row">
-    <div className="col-8">
-    <div className="header_fixed">
-  <table>
-   <thead>
-      <tr>
-        <th>Image</th>
-        <th>ProductName</th>
-        <th><p></p></th>
-        <th>Quantity</th>
-        <th><p></p></th>
-        <th>Price</th> 
-        <th>Remove Product</th>
-      </tr>
-    </thead>
-    <tbody>
- {
- cart.map((r) => {
-  return(
+    <table className="table">
+  <thead>
+    <tr>
+      <th scope="col">Image</th>
+      <th scope="col">ProductName</th>
+      <th scope="col"><p></p></th>
+      <th scope="col">Quantity</th>
+      <th scope="col"><p></p></th>
+      <th scope="col">Price</th> 
+      <th scope="col">Remove Product</th>
+    </tr>
+  </thead>
+  <tbody>
+  {cart.map( r =>
     <tr key={r.productId}>
-
-    <td> <img src={r.details.mainImage.secure_url} /></td> 
+    <th scope="row"><img src={r.details.mainImage.secure_url} /></th>
     <td>{r.details.name}</td>
     <td><button onClick={()=> increaseQty(r.productId)} >+</button></td>
-    <td>{r.quantity} </td>
-    <td><button onClick={()=> decreaseQty(r.productId)}>-</button></td>
+    <td>{r.quantity}</td>
+    <td><button onClick={()=> decreaseQty(r.productId)} >-</button></td>
     <td>{r.details.price}</td>
-     <td>
+    <td>
      <svg onClick={()=>  removeitem(r.productId)} className="delet " xmlns="http://www.w3.org/2000/svg" height={20} width="13.5" viewBox="0 0 576 512">{/*!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.*/}<path fill="#36383a" d="M576 128c0-35.3-28.7-64-64-64H205.3c-17 0-33.3 6.7-45.3 18.7L9.4 233.4c-6 6-9.4 14.1-9.4 22.6s3.4 16.6 9.4 22.6L160 429.3c12 12 28.3 18.7 45.3 18.7H512c35.3 0 64-28.7 64-64V128zM271 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z" /></svg>  </td>
-   </tr>
-  )
-
-}) }
-    
-</tbody> </table>
-</div>
+  </tr>
 
 
-    </div>
-    <div className="col-4">
+)}
+
+</tbody>
+</table>
     <div className="card" style={{width: '18rem'}}>
   <div className="card-body">
     <h5 className="card-title"> Shoping Cart <BsCartCheck /></h5>
@@ -171,9 +161,9 @@ const clear = async ()=>{
 </div>
 
 
-    </div>
+
   </div>
-</div>
+
 
 
 
