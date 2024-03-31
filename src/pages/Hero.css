@@ -1,6 +1,6 @@
 .Hero {
   margin: 5rem 0;
-  background: url(IKEAsofa.jpg) no-repeat center;
+  background: url(/public/IKEAsofa.jpg) no-repeat center;
   width: 100%;
   background-size: cover;
 }

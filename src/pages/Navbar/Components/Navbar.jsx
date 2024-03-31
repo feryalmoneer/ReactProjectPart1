@@ -10,10 +10,10 @@ export default function Navbar() {
     <>
 <nav className="navbar navbar-expand-lg fixed-top">
   <div className="container">
-    <a className=" lobster-regular navbar-brand me-auto  " href="#">FeryaLStore</a>
+    <a className=" lobster-regular navbar-brand me-auto  " href="#">FeryalStore</a>
     <div className="offcanvas offcanvas-end" tabIndex={-1} id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
       <div className="offcanvas-header">
-        <h5 className="offcanvas-title" id="offcanvasNavbarLabel">IkEA</h5>
+        <h5 className="offcanvas-title" id="offcanvasNavbarLabel">FeryalStore</h5>
         <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" />
       </div>
       <div className="offcanvas-body">

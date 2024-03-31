@@ -10,7 +10,7 @@ import Hero from "./pages/Hero";
 import Categories from "./pages/Categories/Components/Categories";
 import Cart from "./pages/Cart/Components/Cart";
 import Products from "./pages/Prouducts/Components/Products";
-//import ProtectedRoutes from "./auth/ProtectedRoutes";
+import ProtectedRoutes from "./auth/ProtectedRoutes";
 import Item from "./Item/Component/Item";
 import ForgetPassword from "./pages/ForgetPassword/Components/ForgetPassword";
 import SendCode from "./pages/SendCode/Components/SendCode";
@@ -40,7 +40,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/Cart",
-        element:<Cart/>
+        element:
+        < ProtectedRoutes>
+        <Cart/>
+       </ProtectedRoutes> ,
+      
       },
       {
         path: "/Categories", element: <Categories/>,

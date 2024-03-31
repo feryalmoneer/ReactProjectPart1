@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import "./GetProduct.css";
@@ -12,6 +12,7 @@ import "swiper/css/scrollbar";
 import { Zoom, toast } from "react-toastify";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 import { useMyContext } from "../../../context/CartQy";
+import { UserInfo } from "../../../context/Lo";
 export default function GetProduct() {
   const [data, setData] = useState({});
   const [load, setLoader] = useState(true);
@@ -19,6 +20,7 @@ export default function GetProduct() {
   const [subImages, setSubImages] = useState([{}]);
   const { id } = useParams();
   const { cart, setCart } = useMyContext();
+  const {isLogin}=useContext(UserInfo);
   const getItem = async () => {
     try {
       const { data } = await axios.get(
@@ -72,15 +74,32 @@ export default function GetProduct() {
   };
 
   return (
-    <>
-      <div className="gitPro">
+    <> <div className="gitPro">
         <div className="details" key={data._id}>
           <div className="box">
             <div className="row d-flex justify-content-around">
               <h2>
                 {data.name}{" "}
-                <div className="addCart">
-                  {
+              </h2>
+              <span className="Dis ">
+                <small>Price:$</small>
+                {data.price}
+              </span>
+            </div>
+            <p>
+              <span>
+                Discription:
+                <br />
+                <p className="cutoff\"> {data.description}</p>
+              </span>
+            </p>
+            <br /> <br />
+          </div>
+
+          <div className="big-img" key={data._id}>
+          <div className="addCart">
+
+                  {isLogin&& <>
                     <button
                       onClick={() => {
                         addToCart(data.id);
@@ -90,32 +109,17 @@ export default function GetProduct() {
                     >
                       Add to cart{" "}
                     </button>
+                  </>
+
+                  
                   }
-                </div>{" "}
-              </h2>
-              <span className="Dis ">
-                <small>Price:$</small>
-                {data.price}
-              </span>
-              <span>
-                <small className="del Dis">Sale :{data.discount}%</small>
-              </span>
-            </div>
-            <p>
-              <span>
-                Discription:
-                <br />
-                <p className="cutoff"> {data.description}</p>
-              </span>
-            </p>
-            <br /> <br />
+                </div>
+           <img src={data.mainImage.secure_url} alt="" />
           </div>
-
-          <div className="big-img" key={data._id}>
-            {/**            <img src={data.mainImage.secure_url} alt="" />
- */}
-
-            <Swiper
+    
+        </div>
+        <hr/>
+        <Swiper
               className="mt-5"
               key={data._id}
               modules={[Navigation, Pagination, Scrollbar, A11y]}
@@ -135,28 +139,35 @@ export default function GetProduct() {
                 </SwiperSlide>
               ))}{" "}
             </Swiper>
-          </div>
-        </div>
       </div>
-      <div className="container">
+      <div className="gitPro">
         <div className="row">
           <div className="card">
+          <h3 className="card__title">Reviews</h3>
+
             <Link to={`/Revwie?id=${data._id}`}>
               <button className="btn btn-outline-success">Add Review</button>
             </Link>
-            <h3 className="card__title">FeedBack:</h3>
+            <div className="cardd">
+
+  <div className="card-body">
+
             {reviews.length > 0 ? (
               reviews.map((r) => {
                 return (
                   <div className="div" key={reviews.id}>
-                    <small> Comment:{r.comment} </small>   <small>Rating:{r.rating}</small>
-                    <br />
+                    <small> Comment:{r.comment} </small>  
+                    <small>Rating:{r.rating}</small>
+                    <br /><hr/>
                   </div>
                 );
               })
             ) : (
               <p>no data</p>
             )}
+  </div>
+</div>
+
           </div>
         </div>
       </div>

@@ -1,5 +1,4 @@
 import axios from "axios";
-import "./signup.module.css";
 import { useState } from "react";
 import { Zoom, toast } from "react-toastify";
 //import{object , string} from 'yap';
@@ -96,17 +95,18 @@ export default function Signup() {
 
   return (
     <>
-      <div className="containerc">
-        <div className="img">
-          {" "}
-          <img src="1 (1).svg" />{" "}
-        </div>
+    <br/>     <br/>    <br/>     <br/>
+    <br/>     <br/>
+
+
+      <div className="container ">
         <div className="login-content">
           <form onSubmit={handelSubmit}>
-            <h2 className="pt-serif-regular-italic ">SignUp</h2>
-     <div className="input-div">
+            <h2 className="pt-serif-regular-italic">SignUp</h2>
+
+             <div className="input-div">
               <div className="div">
-                <h5>Username</h5>
+                <h5>Username</h5>{" "}
                 <input
                   type="text"
                   name="userName"

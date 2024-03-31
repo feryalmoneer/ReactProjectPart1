@@ -51,14 +51,11 @@ export default function SignIn() {
   };
  
   return (<> 
-<div className="containerc">
-<div className="img"> <img src="form.svg"/> </div>
+<div className="container c">
+<div className="imgg"> <img src="f.svg"/> </div>
 <div className="login-content">
     <form onSubmit={handelSubmit} >
       <h2 className="pt-serif-regular-italic  t">Welcome Back</h2>
-<br/><br/>
-<br/>
-<br/>
 
       <div className="input-div">
               <div className="div">
@@ -79,7 +76,6 @@ export default function SignIn() {
         </div>
       </div>
       <a className='a' href="/SendCode">forgetPassword?</a> 
-      <a className='a' href="/signup">If you Dont Have an Account</a>
 
 
       <button type="submit" className="bn" disabled={loader?'disabled':''} >

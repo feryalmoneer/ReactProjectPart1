@@ -91,21 +91,17 @@ const removeitem = async (productId)=>
   }
 }
 const clear = async ()=>{
-  try
-  {  const token = localStorage.getItem('userToken');
-    const {data} = await axios.patch(`https://ecommerce-node4-five.vercel.app/cart/clear`,{},
-  {
-    headers: {
-    Authorization:`Tariq__${token}`
-    }
-  })
-  //console.log(data);
-  }catch
-  {
-    console.log("e");
-  }
+  const token = localStorage.getItem('userToken')
+  const {data}= await axios.patch(`https://ecommerce-node4.vercel.app/cart/clear`,null, {
+   headers:{
+     Authorization:`Tariq__${token}`
+   }
+   });
+   
+  setCart(null);
+  setCart([]);
+};
   
-}
 
   return (
   <> 
