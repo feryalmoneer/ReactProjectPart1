@@ -99,7 +99,7 @@ export default function GetProduct() {
           <div className="big-img" key={data._id}>
           <div className="addCart">
 
-                  {isLogin&& <>
+                  {isLogin&& 
                     <button
                       onClick={() => {
                         addToCart(data.id);
@@ -109,8 +109,7 @@ export default function GetProduct() {
                     >
                       Add to cart{" "}
                     </button>
-                  </>
-
+                 
                   
                   }
                 </div>
