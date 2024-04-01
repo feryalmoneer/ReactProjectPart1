@@ -72,8 +72,12 @@ export default function CreateOrder() {
     </div>
     <input type="submit" className="formbutton"  value="Order"/>
   </form>
+ 
 </div>
-<div className="d-flex  ">
+
+</div>
+   </div>
+   <div className="d-flex  ">
                           {
                           cart.map(item =>
                               <div className="cartItem " key={item._id}>
@@ -83,9 +87,6 @@ export default function CreateOrder() {
                               </div>
                           )}
                       </div>
-</div>
-   </div>
-
     </>
 
   )

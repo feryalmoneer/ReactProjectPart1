@@ -2,7 +2,7 @@ import './Sign.css'
 import { useState } from "react";
 import {Bounce , toast} from 'react-toastify';
 import axios from 'axios';
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 export default function SignIn() {
   const Navigate = useNavigate();
   const[loader , setLoader]=useState(false);
@@ -75,7 +75,7 @@ export default function SignIn() {
           <input type="password" name='password' value={user.password} onChange={handelChange}/>
         </div>
       </div>
-      <a className='a' href="/SendCode">forgetPassword?</a> 
+      <Link Link className='a' to="/SendCode">forgetPassword?</Link> 
 
 
       <button type="submit" className="bn" disabled={loader?'disabled':''} >

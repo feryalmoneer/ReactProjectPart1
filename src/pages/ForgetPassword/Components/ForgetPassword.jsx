@@ -10,7 +10,6 @@ export default function ForgetPassword() {
     email : ""
   });
   const[load , setLoader]=useState(true);
-  const [error ,setError]=('');  
   const handelChange = (e) => {
     const { name, value } = e.target;
      //console.log(name);
@@ -40,8 +39,7 @@ export default function ForgetPassword() {
   };
  
   return (
-    <> 
-    <p>{error}</p>
+    <>
     <div  className='bodys'>
 <div className="l-form">
   <form  className="form" onSubmit={handelSubmit}>

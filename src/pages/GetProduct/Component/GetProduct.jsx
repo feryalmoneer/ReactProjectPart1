@@ -1,18 +1,16 @@
 import axios from "axios";
-import { useContext, useEffect, useState } from "react";
+import {  useEffect, useState } from "react";
+import { PiStarThin } from "react-icons/pi";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import "./GetProduct.css";
 import Loder from "../../Loader/Lodaer";
-import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { Zoom, toast } from "react-toastify";
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 import { useMyContext } from "../../../context/CartQy";
-import { UserInfo } from "../../../context/Lo";
 export default function GetProduct() {
   const [data, setData] = useState({});
   const [load, setLoader] = useState(true);
@@ -20,7 +18,6 @@ export default function GetProduct() {
   const [subImages, setSubImages] = useState([{}]);
   const { id } = useParams();
   const { cart, setCart } = useMyContext();
-  const {isLogin}=useContext(UserInfo);
   const getItem = async () => {
     try {
       const { data } = await axios.get(
@@ -74,79 +71,57 @@ export default function GetProduct() {
   };
 
   return (
-    <> <div className="gitPro">
-        <div className="details" key={data._id}>
-          <div className="box">
-            <div className="row d-flex justify-content-around">
-              <h2>
-                {data.name}{" "}
-              </h2>
-              <span className="Dis ">
-                <small>Price:$</small>
-                {data.price}
-              </span>
-            </div>
-            <p>
-              <span>
-                Discription:
-                <br />
-                <p className="cutoff\"> {data.description}</p>
-              </span>
-            </p>
-            <br /> <br />
-          </div>
+    <> 
+    <br/> <br/><br/>
 
-          <div className="big-img" key={data._id}>
-          <div className="addCart">
+  <div className="main-wrapper">
+  <div className="container">
+    <div className="product-div">
+      <div className="product-div-left">
+        <div className="img-container im">
+        <img src={data.mainImage.secure_url} alt="" />
+        </div>
+        <div className="hover-container" key={subImages._id}>
+      
+              {subImages.map((subImages) => (
+                  <div className="diuv" key={subImages._id}>
+                    <img className="subImg" src={subImages.secure_url} /> <br />
+                  </div>
+              ))}
 
-                  {isLogin&& 
-                    <button
+        </div>
+      </div>
+      <div className="product-div-right">
+      <h1 className='text-3xl font-bold'>{data.name}</h1>
+
+        <span className="product-price"> Price :${data.price}</span>
+        <p className="product-description">
+        {data.description}
+          </p>
+        <div className="btn-groups">
+            <button
                       onClick={() => {
                         addToCart(data.id);
                       }}
-                      className="btn btn-outline-dark"
-                      to="/cart"
-                    >
-                      Add to cart{" "}
+                      to="/cart"> Add to cart
                     </button>
-                 
-                  
-                  }
-                </div>
-           <img src={data.mainImage.secure_url} alt="" />
-          </div>
-    
         </div>
-        <hr/>
-        <Swiper
-              className="mt-5"
-              key={data._id}
-              modules={[Navigation, Pagination, Scrollbar, A11y]}
-              spaceBetween={5}
-              slidesPerView={3}
-              navigation
-              pagination={{ clickable: true }}
-              scrollbar={{ draggable: true }}
-              onSlideChange={() => console.log("slide change")}
-              onSwiper={(swiper) => console.log(swiper)}
-            >
-              {subImages.map((subImages) => (
-                <SwiperSlide className="swiperSlide" key={subImages._id}>
-                  <div className="div">
-                    <img className="subImg" src={subImages.secure_url} /> <br />
-                  </div>
-                </SwiperSlide>
-              ))}{" "}
-            </Swiper>
       </div>
-      <div className="gitPro">
-        <div className="row">
-          <div className="card">
-          <h3 className="card__title">Reviews</h3>
+    </div>
+  </div>
+</div>
 
-            <Link to={`/Revwie?id=${data._id}`}>
-              <button className="btn btn-outline-success">Add Review</button>
+<div className="main-wrapper">
+        <div className="container">
+        <h1 className='text-3xl font-bold'>Reviews</h1>
+
+          <div className="card">
+          <Link to={`/Revwie?id=${data._id}`}>
+          <button className="btn btn-outline-success">Add Review          </button>
+
+
             </Link>
+
             <div className="cardd">
 
   <div className="card-body">
@@ -156,6 +131,7 @@ export default function GetProduct() {
                 return (
                   <div className="div" key={reviews.id}>
                     <small> Comment:{r.comment} </small>  
+                    <br/>
                     <small>Rating:{r.rating}</small>
                     <br /><hr/>
                   </div>
@@ -167,9 +143,7 @@ export default function GetProduct() {
   </div>
 </div>
 
-          </div>
-        </div>
-      </div>
+</div></div></div> 
     </>
   );
 }

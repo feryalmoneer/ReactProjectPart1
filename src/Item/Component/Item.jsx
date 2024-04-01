@@ -13,7 +13,7 @@ const[loader , setLoader]=useState(true);
     const { data } = await axios.get(`https://ecommerce-node4-five.vercel.app/products/category/${id}`);   
     setItem(data.products);
   
- 
+ console.log(data.products)
   } catch (error)
   { 
 console.log(error);
@@ -37,14 +37,18 @@ console.log(error);
 return (
   <>
   <br/> <br/> <br/> <br/><br/><br/>
+  
   <div className="container text-center">
-<div className=" row  row-lg-4 row-md-3 gap-3"  >
+<div className=" row  row-lg-4 row-md-3 gap-5  "  >
  {
   item.map( p=>
-    <div className="card" style={{width: '18rem'}} key={p._id}>
-      <img src={p.mainImage.secure_url} className="ratio" alt="p-Img" />
+    
+    <div className="card cd" style={{width: '18rem'}} 
+    key={p._id}>
+  <img src={p.mainImage.secure_url }  className="ratio pp" alt="p-Img" />
       <div className="card-body">
-        <h5 className="card-title"> {p.name}</h5>
+        <h5 className="card-title ti"> {p.name}</h5>
+        <h3 className="h3h">{p.status}</h3>
       </div>
     </div>
     )}
